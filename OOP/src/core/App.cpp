@@ -68,7 +68,6 @@ int main()
     //cout << p.getName() << "\n";
 
 
-
     //Task
     Task t1 = { "Clean",25,4,2026, "test1"};
     cout << t1.getTaskDetails() << "\n";
