@@ -69,8 +69,8 @@ int main()
 
 
     //Task
-    Task t1 = { "Clean",25,4,2026, "test1"};
-    cout << t1.getTaskDetails() << "\n";
+    //Task t1 = { "Clean",1,25,4,2026, "test1"};
+    //cout << t1.getTaskDetails() << "\n";
 
     //   cout << "\n";
     //   Task* t2 = &t1;
@@ -94,36 +94,45 @@ int main()
 
 
 
+    /*
+        Task t1 = { "Clean1",1,30,12,2026, "test2", user1};
+        Task t2 = { "Clean2",2,30,12,2026, "test2", user1};
+        Task t3 = { "Clean3",3,21,7,2026, "test3", user1 };
 
-    Task t2 = { "Clean2",30,12,2026, "test2" };
-    Task t3 = { "Clean3",21,7,2026, "test3" };
+        Task arr[3] = { t1,t2,t3 };
+	    //cout << arr << "\n"; //address of the first element in the array
+        //   cout << (*arr).getDescription() << "\n"; //content of the first element in the array
 
-    Task arr[3] = { t1,t2,t3 };
-	//cout << arr << "\n"; //address of the first element in the array
-    //   cout << (*arr).getDescription() << "\n"; //content of the first element in the array
+	    //cout << arr+1 << "\n"; //address of the second element in the array
+        //   cout << (arr+1)->getDescription() << "\n"; //content of the second element in the array
 
-	//cout << arr+1 << "\n"; //address of the second element in the array
-    //   cout << (arr+1)->getDescription() << "\n"; //content of the second element in the array
-
-    //using pointers in array
-    Task *ptr = arr;
-	cout << ptr << "\n"; //address of the first element in the array
-	cout << ptr->getDescription() << "\n"; //address of the first element in the array
-	cout << (ptr + 1)->getDescription() << "\n"; //content of the second element in the array
+        //using pointers in array
+        Task *ptr = arr;
+	    cout << ptr << "\n"; //address of the first element in the array
+	    cout << ptr->getDescription() << "\n"; //address of the first element in the array
+	    cout << (ptr + 1)->getDescription() << "\n"; //content of the second element in the array
     
-	//using sizeof will return the bytes used by the array
-	//so we have to devided by the first elemnt size to get the number of elements in the array
-    for (size_t i = 0; i < (sizeof(arr)/sizeof(arr[0])); i++)
-    {
-        cout << (ptr + i)->getDescription() << "\n"; 
+	    //using sizeof will return the bytes used by the array
+	    //so we have to devided by the first elemnt size to get the number of elements in the array
+        for (size_t i = 0; i < (sizeof(arr)/sizeof(arr[0])); i++)
+        {
+            cout << (ptr + i)->getDescription() << "\n"; 
 
-    }
-	//another way of doing a for loop is doing for each loop
-    for (Task i:arr)
-    {
-        cout << i.getDescription() << "\n"; 
+        }
+	    //another way of doing a for loop is doing for each loop
+        for (Task i:arr)
+        {
+            cout << i.getDescription() << "\n"; 
 
-    }
+        }
+    */
+
+
+
+    User user("mahmoud","oasdo21ASd3#","mahmoud@run.no");
+    Task task("Cleaning1",1,25,10,2025,"do it", &user);
+
+	cout << task.getTaskDetails() << "\n";
 
     return 0;
 }

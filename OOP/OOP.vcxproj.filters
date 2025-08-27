@@ -21,9 +21,18 @@
     <ClCompile Include="src\modules\Task.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\modules\User.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\services\TaskDashboard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\User.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

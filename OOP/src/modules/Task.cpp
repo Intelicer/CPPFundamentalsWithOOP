@@ -4,21 +4,42 @@
 #include "../../include/Task.h"
 
 // scope resolution operator :: to implement the methods of 
-// the class that are defined in header
+//the class that are defined in header
 
 using namespace std;
 
-Task::Task(string taskName, int day, int month, int year, string description) {
+Task::Task(string taskName, int priorityLevel, int day, int month, int year, string description, User* taskDoer) {
     setTaskName(taskName);
+    setPriorityLevel(priorityLevel);
     setTaskDueDate(day,month,year);
     setDescription(description);
+	setTaskDoer(taskDoer);
 }
 
 void Task::setTaskName(string taskName) {
     if (taskName.empty()) {
-        throw invalid_argument("Manufacturer name cannot be empty!");
+        throw invalid_argument("Task name cannot be empty!");
     }
     this->taskName = taskName;
+}
+void Task::setPriorityLevel(int priorityLevel) {
+    if (priorityLevel< 0 || priorityLevel > 3) {
+        throw invalid_argument("Task priority level out of range!");
+    }
+    this->priorityLevel = priorityLevel;
+}
+
+void Task::setTaskDoer(User *taskDoer) {
+
+    if (taskDoer == nullptr) {
+        throw invalid_argument("Task doer cannot be empty!");
+	}
+    if( taskDoer->getUsername().empty()) {
+        throw invalid_argument("Task doer username cannot be empty!");
+	}
+	cout << "Assigning task to user: testing out "<< "\n";
+	cout << "Assigning task to user: " << taskDoer->getUsername() << "\n";
+    this->taskDoer = taskDoer->getUsername();
 }
 
 void Task::setTaskDueDate(int day, int month, int year) {
@@ -59,9 +80,17 @@ string Task::getDescription() {
     return this->description;
 }
 
+string Task::getTaskDoer() {
+    return this->taskDoer;
+}
+
 string Task::getTaskDetails() {
 	return "Task: " + 
         getTaskName() + 
+		"\nAssigned to: " +
+		getTaskDoer() +
+		"\nPriority Level: " +
+		to_string(priorityLevel) +
         "\nDue Date: " + 
         getTaskDueDateFormatted() + 
         "\nDescription: " + 
