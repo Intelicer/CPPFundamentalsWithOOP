@@ -2,6 +2,7 @@
 #include <string>
 #include <stdexcept>
 #include <ctime>
+#include <chrono>
 #include "User.h"
 
 using namespace std;
@@ -13,12 +14,13 @@ using namespace std;
 class Task
 {
 private:
-    
-	string taskDoer;
     string taskName;  
     int priorityLevel;
     tm taskDueDate;        
     string description;
+	string taskDoer;
+
+ 
 
 public:
 
@@ -85,6 +87,6 @@ public:
     /*
         returns all the details of the task as a formatted string.
 	*/
-	string getTaskDetails();
+	string retriveTaskDetails();
 };
 

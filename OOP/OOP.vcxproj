@@ -123,14 +123,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\modules\tasktype\HomeTask.cpp" />
+    <ClCompile Include="src\modules\tasktype\OfficeTask.cpp" />
+    <ClCompile Include="src\core\FundTest.cpp" />
     <ClCompile Include="src\core\App.cpp" />
     <ClCompile Include="src\modules\Task.cpp" />
     <ClCompile Include="src\modules\User.cpp" />
     <ClCompile Include="src\services\TaskDashboard.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\HomeTask.h" />
     <ClInclude Include="include\User.h" />
     <ClInclude Include="include\Task.h" />
+    <ClInclude Include="include\OfficeTask.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

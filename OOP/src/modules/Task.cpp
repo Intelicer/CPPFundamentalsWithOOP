@@ -37,8 +37,6 @@ void Task::setTaskDoer(User *taskDoer) {
     if( taskDoer->getUsername().empty()) {
         throw invalid_argument("Task doer username cannot be empty!");
 	}
-	cout << "Assigning task to user: testing out "<< "\n";
-	cout << "Assigning task to user: " << taskDoer->getUsername() << "\n";
     this->taskDoer = taskDoer->getUsername();
 }
 
@@ -84,7 +82,7 @@ string Task::getTaskDoer() {
     return this->taskDoer;
 }
 
-string Task::getTaskDetails() {
+string Task::retriveTaskDetails() {
 	return "Task: " + 
         getTaskName() + 
 		"\nAssigned to: " +
