@@ -276,12 +276,32 @@ int main()
     */
 
     // Fix: Pass a pointer to User for OfficeTask constructor
-    User *user = new User("Mahmoud", "asmdKW$1", "msm@run.no");
-    OfficeTask task1("testOut", 2, 10, 12, 2040, 
-                    "Talk about progression", user, 
-                    "Toghther", 0, "Third floor bulding B");
-    
-    cout << task1.getDescription();
+    //User *user = new User("Mahmoud", "asmdKW$1", "msm@run.no");
+    //OfficeTask task1("testOut", 2, 10, 12, 2040, 
+    //                "Talk about progression", user, 
+    //                "Toghther", 0, "Third floor bulding B");
+    //
+    //cout << task1.getDescription();
+
+
+    /*
+		Polymorphism
+		You can create a class that inherits from another class
+		and override its methods
+		For example if we have a Base class
+		class Base {
+		//base class code
+		virtual void show() {
+		    cout << "Base class show function called" << endl;
+            }
+        };
+		class Derived : public Base {
+		//derived class code
+        void show() override {
+            cout << "Derived class show function called" << endl;
+            }
+        };
+    */
 
     return 0;
 }
